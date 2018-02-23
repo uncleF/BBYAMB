@@ -1,0 +1,23 @@
+/* Slider */
+
+%tx-slider {
+
+  &Holder {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &Body {
+    position: relative;
+    transform: translateZ(0);
+  }
+
+  &Slide {
+    @include tx-inline-block;
+    width: 100%;
+    vertical-align: top;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+}

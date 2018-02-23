@@ -1,0 +1,18 @@
+/* Link Touch State */
+
+@mixin tx-linkTouchStates {
+
+  @include tx-media(coarse) {
+
+    a {
+
+      &:hover,
+      &:active {
+        color: $link;
+      }
+
+    }
+
+  }
+
+}

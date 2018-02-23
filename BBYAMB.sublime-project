@@ -1,0 +1,55 @@
+{
+	"color_variables_files":
+	[
+		"/Users/uncleFucka/Projects/BBYAMB/dev/res/sass/project/_project.scss",
+		"D:/Projects/Projects/BBYAMB/dev/res/sass/project/_project.scss"
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.zip",
+				"*.sublime-project"
+			],
+			"folder_exclude_patterns":
+			[
+				"build",
+				"design",
+				"dev",
+				"docs",
+				"meta",
+				"node_modules",
+				"sources",
+				"tests"
+			],
+			"name": "BBYAMB: Project",
+			"path": "."
+		},
+		{
+			"name": "BBYAMB: HTML",
+			"path": "dev/res/templates"
+		},
+		{
+			"name": "BBYAMB: Sass",
+			"path": "dev/res/sass"
+		},
+		{
+			"name": "BBYAMB: JavaScript",
+			"path": "dev/res/js-dev"
+		},
+		{
+			"name": "BBYAMB: Tests",
+			"path": "tests"
+		},
+		{
+			"name": "BBYAMB: Meta",
+			"path": "meta"
+		},
+		{
+			"name": "BBYAMB: Docs",
+			"path": "docs"
+		}
+	]
+}
+

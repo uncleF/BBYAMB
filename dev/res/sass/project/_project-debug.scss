@@ -1,0 +1,266 @@
+$tx-debug: false;
+
+
+
+@if ($tx-debug == true) {
+
+  // sass-lint:disable no-important
+
+  // Vertical Rhythm Lines
+
+  %debug-rhythm {
+    $debugGridColor: $blue;
+
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, transparent ($lineHeight - 1), $debugGridColor);
+    background-size: 100% $lineHeight;
+    pointer-events: none;
+  }
+
+
+
+  // Developer Note
+
+  $debug-devNote-width: 200px;
+  $debug-devNote-padding: 5px;
+  $debug-devNote-borderRadius: 2px;
+  $debug-devNote-color: $white;
+  $debug-devNote-background: $red;
+  $debug-devNote-fontSize: 12px;
+
+  $debug-devNoteTip-background: rgba($debug-devNote-background, .5);
+
+  %debug-devNoteStyle {
+    border-radius: $debug-devNote-borderRadius;
+    color: $debug-devNote-color;
+    background: $debug-devNote-background;
+  }
+
+  [data-dev-note] {
+    @extend %debug-devNoteStyle;
+    position: relative;
+    box-decoration-break: clone;
+    padding: 0 $debug-devNote-padding;
+
+    &:hover {
+      background: $debug-devNoteTip-background;
+
+      &:after {
+        @extend %debug-devNoteStyle;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        content: 'Dev Note:\A' attr(data-dev-note);
+        display: block;
+        width: ($debug-devNote-width - $debug-devNote-padding);
+        padding: $debug-devNote-padding;
+        margin: 0 0 5px ($debug-devNote-width / -2);
+        font-weight: normal;
+        font-size: $debug-devNote-fontSize;
+        line-height: 1.2;
+      }
+
+    }
+
+  }
+
+
+
+  // Accessibility Debug
+
+  $debug-a11y-outlineWidth: 2px;
+  $debug-a11y-outlineColor: $red;
+
+  %debugOutline {
+    outline: 1em solid $debug-a11y-outlineColor;
+  }
+
+  * {
+
+    &[style] {
+      @extend %debugOutline;
+    }
+
+  }
+
+  html {
+
+    &:not([lang]),
+    &[lang = ''] {
+      @extend %debugOutline;
+    }
+
+  }
+
+  meta {
+
+    &[charset] {
+
+      &:not([charset='UTF-8']) {
+        @extend %debugOutline;
+        display: block;
+      }
+
+    }
+
+  }
+
+  img {
+
+    &:not([alt]) {
+      @extend %debugOutline;
+    }
+
+  }
+
+  a {
+
+    &:not([href]),
+    &[href = ''],
+    &[href *= 'javascript:void(0)'] {
+      @extend %debugOutline;
+    }
+
+    &:empty {
+      @extend %debugOutline;
+    }
+
+  }
+
+  input,
+  select,
+  textarea {
+
+    &:not([id]) {
+      @extend %debugOutline;
+    }
+
+  }
+
+  button {
+
+    &:empty {
+      @extend %debugOutline;
+    }
+
+  }
+
+  label {
+
+    &:not([for]) {
+      @extend %debugOutline;
+    }
+
+  }
+
+
+
+  // Semantics Debug
+
+  $debug-semFlowTags: (h1, h2, h3, h4, h5, h6, p, ul, ol, dl, header, footer, nav, section, main, aside, article, figure, figcaption, progress, summary, blockquote, pre, code, address, table, fieldset, legend, label);
+  $debug-semTextTags: (dfn, acronym, abbr, ins, mark, del, strike, kbd, samp, var, strong, em, cite, q);
+  $debug-unsemTags: (div, span, b, i, s, sup, sub, big, small, u);
+  $debug-attrs: (style);
+
+  $debug-semantics-fontSize: 10px;
+  $debug-semFlowTags-color: $blue;
+  $debug-semTextTags-color: $yellow-darkest;
+  $debug-unsemTags-color: $red;
+  $debug-attrs-color: $purple;
+
+  %debug-tag {
+    position: absolute;
+    z-index: 10000;
+    font-weight: bold;
+  }
+
+  @each $debug-tag in $debug-semFlowTags {
+
+    #{$debug-tag} {
+
+      &:after {
+        @extend %debug-tag;
+        @include tx-font-size($debug-sem-fontSize, none);
+        content: ' <' + quote(#{$debug-tag}) + '>';
+        color: $debug-semFlowTags-color;
+      }
+
+    }
+
+  }
+
+  @each $debug-tag in $debug-semTextTags {
+
+    #{$debug-tag} {
+
+      &:after {
+        @extend %debug-tag;
+        @include tx-font-size($debug-sem-fontSize, none);
+        content: ' <' + quote(#{$debug-tag}) + '>';
+        color: $debug-semTextTags-color;
+      }
+
+    }
+
+  }
+
+  @each $debug-tag in $debug-unsemTags {
+
+    #{$debug-tag} {
+
+      &:after {
+        @extend %debug-tag;
+        @include tx-font-size($debug-sem-fontSize, none);
+        content: ' <' + quote(#{$debug-tag}) + '>';
+        color: $debug-unsemTags-color;
+      }
+
+    }
+
+  }
+
+  @each $debug-attr in $debug-attrs {
+
+    #{$debug-attr} {
+
+      &:after {
+        @extend %debug-tag;
+        @include tx-font-size($debug-sem-fontSize, none);
+        content: ' <' + quote(#{$debug-attr}) + '>';
+        color: $debug-attrs-color;
+      }
+
+    }
+
+  }
+
+
+
+  // Alignment Debug
+
+  $debug-alignment-background: rgba($gray-dark, .2);
+
+  %debug-alignment {
+    background: $debug-alignment-background !important;
+
+    * {
+      background: $debug-alignment-background !important;
+    }
+
+  }
+
+
+
+  // Animation & Transition Debug
+
+  %debug-animation {
+    transition-duration: 10s !important;
+    animation-duration: 10s !important;
+  }
+
+  // sass-lint:enable no-important
+
+}
