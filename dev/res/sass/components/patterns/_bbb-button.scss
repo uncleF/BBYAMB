@@ -1,0 +1,9 @@
+/* Button */
+
+@mixin bbb-button($width, $height) {
+
+    &:before {
+      padding: (($height / $width) * 100%) 0 0;
+    }
+
+}

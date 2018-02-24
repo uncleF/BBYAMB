@@ -1,0 +1,37 @@
+/* GitHub */
+
+$github-width: 90px;
+$github-height: 70px;
+
+.github {
+  @include tx-layer(top);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  overflow: hidden;
+  width: $github-width;
+  height: 0;
+  padding: $github-height 0 0;
+  user-select: none;
+  opacity: .35;
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+
+}
+
+$githubSVG-width: 50px;
+$githubSVG-height: 48px;
+
+.githubSVG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: $githubSVG-width;
+  height: $githubSVG-height;
+  margin: ($githubSVG-height / -2) 0 0 ($githubSVG-width / -2);
+}

@@ -1,0 +1,7 @@
+<svg width="165" height="99" xmlns="http://www.w3.org/2000/svg">
+    <path class="bikeFrame" d="M132 66H92L52.5 21l1.5-4 48 24zM92 66l12-29"/>
+    <path class="bikeSeat" d="M95.897 29.632l13.257 4.42a3 3 0 0 1 1.897 3.794L111 38a2.743 2.743 0 0 1-3.828 1.586l-11.514-5.757A3 3 0 0 1 94 31.146V31a1.442 1.442 0 0 1 1.897-1.368z"/>
+    <path class="bikeFork" d="M54 2l-2 4 5.5 2.5L33 66"/>
+    <circle class="bikeFrontWheel" cx="33" cy="66" r="31"/>
+    <circle class="bikeRearWheel" cx="132" cy="66" r="31"/>
+</svg>

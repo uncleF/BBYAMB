@@ -26,7 +26,7 @@ html {
 body {
   -epub-hyphens: manual;
   hyphens: manual;
-  color: #24292e;
+  color: #fff;
   font-family: "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
   font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
   font-display: swap;
@@ -235,8 +235,8 @@ img {
 }
 
 td, th {
-  padding: 23px 15px 24px;
-  padding: 1.44rem 15px 1.5rem;
+  padding: 23px 10px 24px;
+  padding: 1.44rem 10px 1.5rem;
   border: 1px solid #999;
 }
 
@@ -431,15 +431,15 @@ select[multiple] {
 button {
   height: 36px;
   height: 2.25rem;
-  padding: 0 15px;
+  padding: 0 10px;
   cursor: pointer;
 }
 
 textarea {
   height: 214px;
   height: 13.38rem;
-  padding: 6px 15px;
-  padding: 0.38rem 15px;
+  padding: 6px 10px;
+  padding: 0.38rem 10px;
   overflow: auto;
   font-size: inherit;
 }
@@ -450,11 +450,11 @@ textarea {
   /* Baseline, Typography & Vertical Rhythm */
   pre, code, var, acronym, abbr, ins, del {
     border: 0;
-    color: #24292e;
+    color: #fff;
     text-decoration: none;
   }
   html, body {
-    background: #fff;
+    background: #000;
   }
   blockquote, img, table, tr {
     page-break-inside: avoid;
@@ -468,7 +468,7 @@ textarea {
     margin: .5cm;
   }
   body {
-    color: #24292e;
+    color: #fff;
     font-size: 12pt;
     line-height: 1.5;
   }
@@ -484,11 +484,11 @@ textarea {
     content: '';
   }
   a {
-    color: #24292e;
+    color: #fff;
     text-decoration: none;
   }
   a:visited, a:hover, a:active {
-    color: #24292e;
+    color: #fff;
   }
   a:after {
     content: " (" attr(href) ")";
@@ -503,18 +503,17 @@ textarea {
 
 /* Layout */
 html {
-  -webkit-overflow-scrolling: touch;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
-  min-width: 61.25em;
-  max-width: 1920px;
-  min-height: 100%;
-  margin: 0 auto;
   position: relative;
-  padding: 0 30px;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #000;
 }
 
 /* Phone Layout */
@@ -540,6 +539,317 @@ body {
 /* Lists Reset */
 /* Image Blocker */
 /* Visually Hidden */
+/* Button */
+/* App */
+.app {
+  position: relative;
+  flex-grow: 1;
+}
+
+/* Logo */
+.bbyamb {
+  z-index: 100;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: block;
+  overflow: hidden;
+  width: 148px;
+  height: 0;
+  padding: 88px 0 0;
+  color: #fff;
+  user-select: none;
+}
+
+.bbyambSVG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bbyambText {
+  fill-rule: evenodd;
+  fill: currentColor;
+}
+
+.bbyambRibbon {
+  fill: #cc2929;
+}
+
+/* Bike */
+.bikeHolder {
+  z-index: 100;
+  position: absolute;
+  top: 130px;
+  left: 20px;
+  width: 159px;
+  user-select: none;
+}
+
+.bikeHolder:before {
+  display: block;
+  content: "";
+  position: relative;
+  padding: 60% 0 0;
+}
+
+.bike {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bikeFrame, .bikeFork, .bikeFrontWheel, .bikeRearWheel {
+  transition: 0.1s;
+  stroke: #595959;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.bikePart-is-active .bikeFrame, .bikePart-is-active .bikeFork, .bikePart-is-active .bikeFrontWheel, .bikePart-is-active .bikeRearWheel {
+  stroke: #8c232c;
+}
+
+.bikeSeat {
+  transition: 0.1s;
+  fill: #595959;
+}
+
+.bikePart-is-active .bikeSeat {
+  fill: #8c232c;
+}
+
+.bikeFork {
+  stroke-width: 3;
+}
+
+.bikePart {
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.bike-is-highlighting .bikePart-is-highlighted {
+  opacity: 1;
+}
+
+.fauxBike {
+  transition: 0.1s;
+}
+
+.bike-is-highlighting .fauxBike {
+  opacity: .35;
+}
+
+.bikeCatcher {
+  opacity: 0;
+  fill: #2988cc;
+}
+
+/* Buttons */
+.buttonPan, .buttonRotateCCW, .buttonRotateCW, .buttonZoomIn, .buttonZoomOut, .buttonTarget, .buttonSwitch, .buttonFullScreen, .buttonHelp {
+  position: relative;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  opacity: .5;
+  transition: 0.1s;
+}
+
+.buttonPan:before, .buttonRotateCCW:before, .buttonRotateCW:before, .buttonZoomIn:before, .buttonZoomOut:before, .buttonTarget:before, .buttonSwitch:before, .buttonFullScreen:before, .buttonHelp:before {
+  display: block;
+  content: "";
+  position: relative;
+  width: 100%;
+}
+
+.buttonPan:after, .buttonRotateCCW:after, .buttonRotateCW:after, .buttonZoomIn:after, .buttonZoomOut:after, .buttonTarget:after, .buttonSwitch:after, .buttonFullScreen:after, .buttonHelp:after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+}
+
+.buttonPan:hover, .buttonRotateCCW:hover, .buttonRotateCW:hover, .buttonZoomIn:hover, .buttonZoomOut:hover, .buttonTarget:hover, .buttonSwitch:hover, .buttonFullScreen:hover, .buttonHelp:hover, .buttonPan:active, .buttonRotateCCW:active, .buttonRotateCW:active, .buttonZoomIn:active, .buttonZoomOut:active, .buttonTarget:active, .buttonSwitch:active, .buttonFullScreen:active, .buttonHelp:active {
+  opacity: 1;
+}
+
+.buttonPan:focus, .buttonRotateCCW:focus, .buttonRotateCW:focus, .buttonZoomIn:focus, .buttonZoomOut:focus, .buttonTarget:focus, .buttonSwitch:focus, .buttonFullScreen:focus, .buttonHelp:focus {
+  outline: none;
+}
+
+.buttonPan {
+  width: 22px;
+}
+
+.buttonPan:before {
+  padding: 100% 0 0;
+}
+
+.buttonRotateCCW {
+  width: 23px;
+}
+
+.buttonRotateCCW:before {
+  padding: 86.96% 0 0;
+}
+
+.buttonRotateCW {
+  width: 23px;
+}
+
+.buttonRotateCW:before {
+  padding: 86.96% 0 0;
+}
+
+.buttonZoomIn {
+  width: 20px;
+}
+
+.buttonZoomIn:before {
+  padding: 100% 0 0;
+}
+
+.buttonZoomOut {
+  width: 20px;
+}
+
+.buttonZoomOut:before {
+  padding: 100% 0 0;
+}
+
+.buttonTarget {
+  width: 22px;
+}
+
+.buttonTarget:before {
+  padding: 100% 0 0;
+}
+
+.buttonSwitch {
+  width: 25px;
+}
+
+.buttonSwitch:before {
+  padding: 88% 0 0;
+}
+
+.buttonFullScreen {
+  width: 18px;
+}
+
+.buttonFullScreen:before {
+  padding: 100% 0 0;
+}
+
+.buttonHelp {
+  display: none;
+  width: 14px;
+}
+
+.buttonHelp:before {
+  padding: 164.29% 0 0;
+}
+
+.buttonSVG, .buttonSwitchSVG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.buttonSVG {
+  width: 100%;
+}
+
+.buttonFullScreen-is-on .buttonFullScreenOff {
+  opacity: 0;
+}
+
+.buttonFullScreenOn {
+  opacity: 0;
+}
+
+.buttonFullScreen-is-on .buttonFullScreenOn {
+  opacity: 1;
+}
+
+.buttonSwitchSVG {
+  width: 156%;
+  transform: translateX(-36%) translateZ(0);
+  transition: 0.2s;
+}
+
+.buttonSwitch-is-on .buttonSwitchSVG {
+  transform: translateX(0) translateZ(0);
+}
+
+.buttonSwitchLeft {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.buttonSwitch-is-on .buttonSwitchLeft {
+  opacity: 1;
+}
+
+.buttonSwitchRight {
+  transition: 0.2s;
+}
+
+.buttonSwitch-is-on .buttonSwitchRight {
+  opacity: 0;
+}
+
+.buttonTitle {
+  position: absolute;
+  right: 100%;
+  bottom: 1000px;
+}
+
+/* Canvas */
+.canvas {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Disclaimer */
+.disclaimer {
+  z-index: 100;
+  font-size: 12px;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #999;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.disclaimer a {
+  color: #fff;
+}
+
+.disclaimer a:visited, .disclaimer a:hover, .disclaimer a:active {
+  color: #fff;
+}
+
 /* Fonts */
 @font-face {
   font-weight: normal;
@@ -577,8 +887,77 @@ body {
   font-family: "Open Sans", "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
 }
 
+/* GitHub */
+.github {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  overflow: hidden;
+  width: 90px;
+  height: 0;
+  padding: 70px 0 0;
+  user-select: none;
+  opacity: .35;
+}
+
+.github:hover, .github:active {
+  opacity: 1;
+}
+
+.githubSVG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 50px;
+  height: 48px;
+  margin: -24px 0 0 -25px;
+}
+
+/* Icons */
+.iconStroke, .iconQuestion {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  fill: none;
+}
+
+.iconStroke {
+  stroke-width: 2;
+}
+
+.iconFill {
+  fill: #fff;
+}
+
+.iconQuestion {
+  stroke-width: 3;
+}
+
+.iconGitHub {
+  fill: #fff;
+}
+
+/* UI */
+.ui {
+  z-index: 100;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  margin: 0 0 0 -175px;
+}
+
 /* Sprites */
-/* HDPI */
-/* XHDPI */
+.sprites {
+  position: absolute;
+  right: 100%;
+  bottom: 100%;
+}
 
 /*# sourceMappingURL=styles.min.css.map */

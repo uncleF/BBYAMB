@@ -1,0 +1,7 @@
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+    <g class="iconStroke">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M1 11h4m6 6v4m6-10h4M11 1v4"/>
+    </g>
+    <circle class="iconFill" cx="11" cy="11" r="2"/>
+</svg>

@@ -1,0 +1,103 @@
+/* Bike */
+
+$bike-ratio: 99px / 165px;
+$bike-width: 159px;
+
+.bikeHolder {
+  @include tx-layer(top);
+  position: absolute;
+  top: 130px;
+  left: $gap;
+  width: $bike-width;
+  user-select: none;
+
+  &:before {
+    @include tx-pseudo(relative);
+    padding: ($bike-ratio * 100%) 0 0;
+  }
+
+}
+
+$bike-color: $gray-darkest;
+$bike-active-color: $red-darkest;
+
+.bike {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%bikeStroke {
+  transition: $UITransitionFast;
+  stroke: $bike-color;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+
+  .bikePart-is-active & {
+    stroke: $bike-active-color;
+  }
+
+}
+
+.bikeFrame {
+  @extend %bikeStroke;
+}
+
+.bikeSeat {
+  transition: $UITransitionFast;
+  fill: $bike-color;
+
+  .bikePart-is-active & {
+    fill: $bike-active-color;
+  }
+
+}
+
+.bikeFork {
+  @extend %bikeStroke;
+  stroke-width: 3;
+}
+
+.bikeFrontWheel {
+  @extend %bikeStroke;
+}
+
+.bikeRearWheel {
+  @extend %bikeStroke;
+}
+
+.bikePart {
+  opacity: 0;
+  cursor: pointer;
+  transition: $UITransitionFast;
+
+  .bike-is-highlighting & {
+
+    &-is-highlighted {
+      opacity: 1;
+    }
+
+  }
+
+}
+
+.fauxBike {
+  transition: $UITransitionFast;
+
+  .bike-is-highlighting & {
+    opacity: .35;
+  }
+
+}
+
+$bikeCatcher-fill: $blue;
+
+.bikeCatcher {
+  opacity: 0;
+  fill: $bikeCatcher-fill;
+}

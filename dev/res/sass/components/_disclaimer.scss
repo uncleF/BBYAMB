@@ -1,0 +1,22 @@
+/* Disclaimer */
+
+$disclaimer-color: $gray;
+$disclaimer-fontSize: 12px;
+
+$disclaimerLink-color: $white;
+
+.disclaimer {
+  @include tx-layer(top);
+  @include tx-font-size($disclaimer-fontSize, none);
+  position: absolute;
+  bottom: $gap;
+  right: $gap;
+  color: $disclaimer-color;
+  line-height: 1.5;
+  user-select: none;
+
+  a {
+    @include tx-link($disclaimerLink-color, $all: true);
+  }
+
+}

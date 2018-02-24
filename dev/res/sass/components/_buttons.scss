@@ -1,0 +1,186 @@
+/* Buttons */
+
+$uiButton-size: 50px;
+
+%uiButton {
+  position: relative;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  opacity: .5;
+  transition: $UITransitionFast;
+
+  &:before {
+    @include tx-pseudo(relative);
+    width: 100%;
+  }
+
+  &:after {
+    @include tx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $uiButton-size;
+    height: $uiButton-size;
+    margin: ($uiButton-size / -2) 0 0 ($uiButton-size / -2);
+  }
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+$buttonPan-width: 22px;
+$buttonPan-height: 22px;
+
+.buttonPan {
+  @extend %uiButton;
+  @include bbb-button($buttonPan-width, $buttonPan-height);
+  width: $buttonPan-width;
+}
+
+$buttonRotateCCW-width: 23px;
+$buttonRotateCCW-height: 20px;
+
+.buttonRotateCCW {
+  @extend %uiButton;
+  @include bbb-button($buttonRotateCCW-width, $buttonRotateCCW-height);
+  width: $buttonRotateCCW-width;
+}
+
+$buttonRotateCW-width: 23px;
+$buttonRotateCW-height: 20px;
+
+.buttonRotateCW {
+  @extend %uiButton;
+  @include bbb-button($buttonRotateCW-width, $buttonRotateCW-height);
+  width: $buttonRotateCW-width;
+}
+
+$buttonZoomIn-width: 20px;
+$buttonZoomIn-height: 20px;
+
+.buttonZoomIn {
+  @extend %uiButton;
+  @include bbb-button($buttonZoomIn-width, $buttonZoomIn-height);
+  width: $buttonZoomIn-width;
+}
+
+$buttonZoomOut-width: 20px;
+$buttonZoomOut-height: 20px;
+
+.buttonZoomOut {
+  @extend %uiButton;
+  @include bbb-button($buttonZoomOut-width, $buttonZoomOut-height);
+  width: $buttonZoomOut-width;
+}
+
+$buttonTarget-width: 22px;
+$buttonTarget-height: 22px;
+
+.buttonTarget {
+  @extend %uiButton;
+  @include bbb-button($buttonTarget-width, $buttonTarget-height);
+  width: $buttonTarget-width;
+}
+
+$buttonSwitch-width: 39px;
+$buttonSwitch-height: 22px;
+
+$buttonSwitchZone-width: 25px;
+
+.buttonSwitch {
+  @extend %uiButton;
+  @include bbb-button($buttonSwitchZone-width, $buttonSwitch-height);
+  width: $buttonSwitchZone-width;
+}
+
+$buttonFullScreen-width: 18px;
+$buttonFullScreen-height: 18px;
+
+.buttonFullScreen {
+  @extend %uiButton;
+  @include bbb-button($buttonFullScreen-width, $buttonFullScreen-height);
+  width: $buttonFullScreen-width;
+}
+
+$buttonHelp-width: 14px;
+$buttonHelp-height: 23px;
+
+.buttonHelp {
+  @extend %uiButton;
+  @include bbb-button($buttonHelp-width, $buttonHelp-height);
+  display: none;
+  width: $buttonHelp-width;
+}
+
+%uiButtonSVG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.buttonSVG {
+  @extend %uiButtonSVG;
+  width: 100%;
+}
+
+.buttonFullScreenOff {
+
+  .buttonFullScreen-is-on & {
+    opacity: 0;
+  }
+
+}
+
+.buttonFullScreenOn {
+  opacity: 0;
+
+  .buttonFullScreen-is-on & {
+    opacity: 1;
+  }
+
+}
+
+.buttonSwitchSVG {
+  @extend %uiButtonSVG;
+  width: (($buttonSwitch-width / $buttonSwitchZone-width) * 100%);
+  transform: translateX(-36%) translateZ(0);
+  transition: $UITransitionDefault;
+
+  .buttonSwitch-is-on & {
+    transform: translateX(0) translateZ(0);
+  }
+
+}
+
+.buttonSwitchLeft {
+  opacity: 0;
+  transition: $UITransitionDefault;
+
+  .buttonSwitch-is-on & {
+    opacity: 1;
+  }
+
+}
+
+.buttonSwitchRight {
+  transition: $UITransitionDefault;
+
+  .buttonSwitch-is-on & {
+    opacity: 0;
+  }
+
+}
+
+.buttonTitle {
+  position: absolute;
+  right: 100%;
+  bottom: 1000px;
+}

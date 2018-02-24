@@ -1,0 +1,15 @@
+/* UI */
+
+$ui-width: 350px;
+
+.ui {
+  @include tx-layer(top);
+  position: absolute;
+  top: $gap + 5px;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $ui-width;
+  margin: 0 0 0 ($ui-width / -2);
+}

@@ -1,13 +1,7 @@
 /* Sprites */
 
-
-
-/* HDPI */
-
-// @include tx-media(hdpi) {}
-
-
-
-/* XHDPI */
-
-// @include tx-media(xhdpi) {}
+.sprites {
+  position: absolute;
+  right: 100%;
+  bottom: 100%;
+}

@@ -1,0 +1,39 @@
+/* Logo */
+
+$bbyamb-width: 148px;
+$bbyamb-height: 88px;
+$bbyamb-color: $white;
+
+.bbyamb {
+  @include tx-layer(top);
+  position: absolute;
+  top: $gap;
+  left: $gap;
+  display: block;
+  overflow: hidden;
+  width: $bbyamb-width;
+  height: 0;
+  padding: $bbyamb-height 0 0;
+  color: $bbyamb-color;
+  user-select: none;
+}
+
+.bbyambSVG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bbyambText {
+  fill-rule: evenodd;
+  fill: currentColor;
+}
+
+$bbyambRibbon-fill: $red;
+
+.bbyambRibbon {
+  fill: $bbyambRibbon-fill;
+}

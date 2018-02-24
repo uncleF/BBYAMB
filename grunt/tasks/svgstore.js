@@ -5,7 +5,7 @@ const tasks = {
   options: {
     prefix: 'spt-',
     svg: {
-      class: 'sourceSVG',
+      class: 'sprites',
     },
     formatting: {
       indent_size: 2,
@@ -14,6 +14,8 @@ const tasks = {
     preserveDescElement: false,
     cleanup: true,
     cleanupdefs: true,
+    copyAttrs: true,
+    inheritviewbox: true,
   },
 };
 

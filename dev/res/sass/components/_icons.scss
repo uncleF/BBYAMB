@@ -1,0 +1,30 @@
+/* Icons */
+
+$icon-color: $white;
+
+%iconStrokeBase {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: $icon-color;
+  fill: none;
+}
+
+.iconStroke {
+  @extend %iconStrokeBase;
+  stroke-width: 2;
+}
+
+.iconFill {
+ fill: $icon-color;
+}
+
+.iconQuestion {
+  @extend %iconStrokeBase;
+  stroke-width: 3;
+}
+
+$iconGitHub-color: $white;
+
+.iconGitHub {
+  fill: $iconGitHub-color;
+}
